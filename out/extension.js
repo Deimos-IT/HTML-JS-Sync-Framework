@@ -40,6 +40,7 @@ const codeActions_1 = require("./codeActions");
 const fwDefinitionProvider_1 = require("./fwDefinitionProvider");
 const fwCompletionProvider_1 = require("./fwCompletionProvider");
 const fwOpenLiveUIBuiler_1 = require("./fwOpenLiveUIBuiler");
+const fwOpenUiBuilderComponentInitializer_1 = require("./fwOpenUiBuilderComponentInitializer");
 let diagnosticCollection;
 function activate(context) {
     diagnosticCollection = vscode.languages.createDiagnosticCollection('fwAttributes');
@@ -56,6 +57,10 @@ function activate(context) {
     // command for live UI builder
     context.subscriptions.push(vscode.commands.registerCommand("fwAttributes.openLiveUiBuilder", async (fileUri) => {
         await (0, fwOpenLiveUIBuiler_1.openLiveUiBuilder)(fileUri);
+    }));
+    // command for FWComponent initializer
+    context.subscriptions.push(vscode.commands.registerCommand("fwAttributes.openUiBuilderComponentInitializer", async (fileUri) => {
+        await (0, fwOpenUiBuilderComponentInitializer_1.openUiBuilderComponentInitializer)(fileUri);
     }));
     // Validate on open
     context.subscriptions.push(vscode.workspace.onDidOpenTextDocument(doc => {

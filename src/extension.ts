@@ -3,6 +3,7 @@ import { FWCodeActionProvider } from './codeActions';
 import { provideFWDefinition } from './fwDefinitionProvider';
 import { FWCompletionProvider } from './fwCompletionProvider';
 import { openLiveUiBuilder } from './fwOpenLiveUIBuiler';
+import { openUiBuilderComponentInitializer } from './fwOpenUiBuilderComponentInitializer';
 
 let diagnosticCollection: vscode.DiagnosticCollection;
 
@@ -48,6 +49,16 @@ export function activate(context: vscode.ExtensionContext) {
 			"fwAttributes.openLiveUiBuilder",
 			async (fileUri?: vscode.Uri) => {
 				await openLiveUiBuilder(fileUri);
+			}
+		)
+	);
+
+	// command for FWComponent initializer
+	context.subscriptions.push(
+		vscode.commands.registerCommand(
+			"fwAttributes.openUiBuilderComponentInitializer",
+			async (fileUri?: vscode.Uri) => {
+				await openUiBuilderComponentInitializer(fileUri);
 			}
 		)
 	);

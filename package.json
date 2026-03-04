@@ -24,6 +24,10 @@
       {
         "command": "fwAttributes.openLiveUiBuilder",
         "title": "Open Live UiBuilder"
+      },
+      {
+        "command": "fwAttributes.openUiBuilderComponentInitializer",
+        "title": "Open UiBuilder FWComponent Initializer"
       }
     ],
     "languages": [
@@ -51,6 +55,11 @@
         {
           "command": "fwAttributes.openLiveUiBuilder",
           "when": "resourceLangId == html",
+          "group": "navigation"
+        },
+        {
+          "command": "fwAttributes.openUiBuilderComponentInitializer",
+          "when": "explorerResourceIsFolder && resourceFilename == App",
           "group": "navigation"
         }
       ]
