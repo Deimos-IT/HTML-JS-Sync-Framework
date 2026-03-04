@@ -1,9 +1,11 @@
+.claude/**
+.git-extension-wrap/**
 # Nestjs specific
 /dist
 /node_modules
 /build
 /tmp
-
+/out
 # Logs
 logs
 *.log
@@ -22,3 +24,4 @@ lerna-debug.log*
 # temp directory
 .temp
 .tmp
+.vsix
