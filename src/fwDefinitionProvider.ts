@@ -53,7 +53,7 @@ export async function provideFWDefinition(document: vscode.TextDocument, positio
          */
         "${handlerName}": null,
     `;
-                const insertPosIndex = findEndOfElementsBlock(jsText);
+                const insertPosIndex = findEndOfElementsBlock(jsText) - 1;
                 if (insertPosIndex === -1) return null;
 
                 const insertPos = jsDoc.positionAt(insertPosIndex);

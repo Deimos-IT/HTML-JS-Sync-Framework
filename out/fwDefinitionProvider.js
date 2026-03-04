@@ -86,7 +86,7 @@ async function provideFWDefinition(document, position) {
          */
         "${handlerName}": null,
     `;
-                const insertPosIndex = findEndOfElementsBlock(jsText);
+                const insertPosIndex = findEndOfElementsBlock(jsText) - 1;
                 if (insertPosIndex === -1)
                     return null;
                 const insertPos = jsDoc.positionAt(insertPosIndex);

@@ -2,6 +2,7 @@ import * as vscode from 'vscode';
 import { FWCodeActionProvider } from './codeActions';
 import { provideFWDefinition } from './fwDefinitionProvider';
 import { FWCompletionProvider } from './fwCompletionProvider';
+import { openLiveUiBuilder } from './fwOpenLiveUIBuiler';
 
 let diagnosticCollection: vscode.DiagnosticCollection;
 
@@ -37,6 +38,16 @@ export function activate(context: vscode.ExtensionContext) {
 			"fwAttributes.createHandler",
 			async (handlerName: string, jsFilePath: string) => {
 				await insertHandler(handlerName, jsFilePath);
+			}
+		)
+	);
+
+	// command for live UI builder
+	context.subscriptions.push(
+		vscode.commands.registerCommand(
+			"fwAttributes.openLiveUiBuilder",
+			async (fileUri?: vscode.Uri) => {
+				await openLiveUiBuilder(fileUri);
 			}
 		)
 	);

@@ -3,7 +3,7 @@
 npm install -g @vscode/vsce
 npm run compile
 vsce package
-code --install-extension "C:\sviluppo\git_repo\VSCodeExtensions\fwitd\fwitd-0.0.1.vsix"
+code.cmd --install-extension "E:\AAA\gitrepo\VSCodeExtensions\HTML-JS-Sync-Framework\fwitd-0.0.1.vsix"
 # Ctrl+Shift+P → Reload Window
 ```
 

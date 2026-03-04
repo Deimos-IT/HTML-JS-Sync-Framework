@@ -20,6 +20,10 @@
       {
         "command": "fwitd.helloWorld",
         "title": "Hello World"
+      },
+      {
+        "command": "fwAttributes.openLiveUiBuilder",
+        "title": "Open Live UiBuilder"
       }
     ],
     "languages": [
@@ -34,7 +38,23 @@
           ".htm"
         ]
       }
-    ]
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "fwAttributes.openLiveUiBuilder",
+          "when": "resourceLangId == html",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "fwAttributes.openLiveUiBuilder",
+          "when": "resourceLangId == html",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
